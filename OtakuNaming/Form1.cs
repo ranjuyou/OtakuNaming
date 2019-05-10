@@ -69,7 +69,10 @@ namespace OtakuNaming
             else if (this.rbD31.Checked) ResultName += " 하카이샤";
             else ResultName += "NULL";
 
-            if (ResultName.Contains("NULL"))
+            if (ResultName.Contains("NULL") ||
+                (this.rbM2.Checked && (this.rbD30.Checked || this.rbD31.Checked) ||
+                ((this.rbM4.Checked || this.rbM6.Checked || this.rbM9.Checked || this.rbM11.Checked)
+                    && this.rbD31.Checked)))
             {
                 MessageBox.Show("제대로 입력하세요.", "결과");
                 ResultName = "";
